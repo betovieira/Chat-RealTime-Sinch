@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB5B4E931BCF0344000CCA2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B4E921BCF0344000CCA2E /* AppDelegate.swift */; };
+		DB5B4E951BCF0344000CCA2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B4E941BCF0344000CCA2E /* ViewController.swift */; };
+		DB5B4E981BCF0344000CCA2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5B4E961BCF0344000CCA2E /* Main.storyboard */; };
+		DB5B4E9A1BCF0344000CCA2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB5B4E991BCF0344000CCA2E /* Assets.xcassets */; };
+		DB5B4E9D1BCF0344000CCA2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5B4E9B1BCF0344000CCA2E /* LaunchScreen.storyboard */; };
+		DB5B4EA81BCF0344000CCA2E /* ramonPediuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B4EA71BCF0344000CCA2E /* ramonPediuTests.swift */; };
+		DB5B4EB31BCF0344000CCA2E /* ramonPediuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B4EB21BCF0344000CCA2E /* ramonPediuUITests.swift */; };
+		DB5B4EC11BCF0361000CCA2E /* Sinch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B4EC01BCF0361000CCA2E /* Sinch.framework */; settings = {ASSET_TAGS = (); }; };
+		DB5B4EC31BCF0396000CCA2E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B4EC21BCF0396000CCA2E /* AudioToolbox.framework */; };
+		DB5B4EC51BCF039F000CCA2E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B4EC41BCF039F000CCA2E /* AVFoundation.framework */; };
+		DB5B4EC71BCF03A5000CCA2E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B4EC61BCF03A5000CCA2E /* Security.framework */; };
+		DBE7B9D81BCFBC740081621D /* MainChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE7B9D71BCFBC740081621D /* MainChat.storyboard */; settings = {ASSET_TAGS = (); }; };
+		DBE7B9DA1BCFBCCE0081621D /* IdentificacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE7B9D91BCFBCCE0081621D /* IdentificacaoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DBE7B9DC1BCFBD6B0081621D /* PassingVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE7B9DB1BCFBD6B0081621D /* PassingVariable.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB5B4EA41BCF0344000CCA2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB5B4E871BCF0344000CCA2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB5B4E8E1BCF0344000CCA2E;
+			remoteInfo = ramonPediu;
+		};
+		DB5B4EAF1BCF0344000CCA2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB5B4E871BCF0344000CCA2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB5B4E8E1BCF0344000CCA2E;
+			remoteInfo = ramonPediu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB5B4E8F1BCF0344000CCA2E /* ramonPediu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ramonPediu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB5B4E921BCF0344000CCA2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB5B4E941BCF0344000CCA2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB5B4E971BCF0344000CCA2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB5B4E991BCF0344000CCA2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB5B4E9C1BCF0344000CCA2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB5B4E9E1BCF0344000CCA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5B4EA31BCF0344000CCA2E /* ramonPediuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ramonPediuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB5B4EA71BCF0344000CCA2E /* ramonPediuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ramonPediuTests.swift; sourceTree = "<group>"; };
+		DB5B4EA91BCF0344000CCA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5B4EAE1BCF0344000CCA2E /* ramonPediuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ramonPediuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB5B4EB21BCF0344000CCA2E /* ramonPediuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ramonPediuUITests.swift; sourceTree = "<group>"; };
+		DB5B4EB41BCF0344000CCA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5B4EC01BCF0361000CCA2E /* Sinch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sinch.framework; sourceTree = "<group>"; };
+		DB5B4EC21BCF0396000CCA2E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DB5B4EC41BCF039F000CCA2E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DB5B4EC61BCF03A5000CCA2E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DBE7B9D31BCFB9DA0081621D /* ramonPediu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ramonPediu-Bridging-Header.h"; sourceTree = "<group>"; };
+		DBE7B9D71BCFBC740081621D /* MainChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainChat.storyboard; sourceTree = "<group>"; };
+		DBE7B9D91BCFBCCE0081621D /* IdentificacaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificacaoViewController.swift; sourceTree = "<group>"; };
+		DBE7B9DB1BCFBD6B0081621D /* PassingVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingVariable.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB5B4E8C1BCF0344000CCA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB5B4EC71BCF03A5000CCA2E /* Security.framework in Frameworks */,
+				DB5B4EC51BCF039F000CCA2E /* AVFoundation.framework in Frameworks */,
+				DB5B4EC31BCF0396000CCA2E /* AudioToolbox.framework in Frameworks */,
+				DB5B4EC11BCF0361000CCA2E /* Sinch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5B4EA01BCF0344000CCA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5B4EAB1BCF0344000CCA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB5B4E861BCF0344000CCA2E = {
+			isa = PBXGroup;
+			children = (
+				DB5B4EC61BCF03A5000CCA2E /* Security.framework */,
+				DB5B4EC41BCF039F000CCA2E /* AVFoundation.framework */,
+				DB5B4EC21BCF0396000CCA2E /* AudioToolbox.framework */,
+				DB5B4EC01BCF0361000CCA2E /* Sinch.framework */,
+				DB5B4E911BCF0344000CCA2E /* ramonPediu */,
+				DB5B4EA61BCF0344000CCA2E /* ramonPediuTests */,
+				DB5B4EB11BCF0344000CCA2E /* ramonPediuUITests */,
+				DB5B4E901BCF0344000CCA2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB5B4E901BCF0344000CCA2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB5B4E8F1BCF0344000CCA2E /* ramonPediu.app */,
+				DB5B4EA31BCF0344000CCA2E /* ramonPediuTests.xctest */,
+				DB5B4EAE1BCF0344000CCA2E /* ramonPediuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB5B4E911BCF0344000CCA2E /* ramonPediu */ = {
+			isa = PBXGroup;
+			children = (
+				DBE7B9D91BCFBCCE0081621D /* IdentificacaoViewController.swift */,
+				DB5B4E921BCF0344000CCA2E /* AppDelegate.swift */,
+				DBE7B9DB1BCFBD6B0081621D /* PassingVariable.swift */,
+				DB5B4E941BCF0344000CCA2E /* ViewController.swift */,
+				DBE7B9D71BCFBC740081621D /* MainChat.storyboard */,
+				DB5B4E961BCF0344000CCA2E /* Main.storyboard */,
+				DB5B4E991BCF0344000CCA2E /* Assets.xcassets */,
+				DB5B4E9B1BCF0344000CCA2E /* LaunchScreen.storyboard */,
+				DB5B4E9E1BCF0344000CCA2E /* Info.plist */,
+				DBE7B9D31BCFB9DA0081621D /* ramonPediu-Bridging-Header.h */,
+			);
+			path = ramonPediu;
+			sourceTree = "<group>";
+		};
+		DB5B4EA61BCF0344000CCA2E /* ramonPediuTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB5B4EA71BCF0344000CCA2E /* ramonPediuTests.swift */,
+				DB5B4EA91BCF0344000CCA2E /* Info.plist */,
+			);
+			path = ramonPediuTests;
+			sourceTree = "<group>";
+		};
+		DB5B4EB11BCF0344000CCA2E /* ramonPediuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB5B4EB21BCF0344000CCA2E /* ramonPediuUITests.swift */,
+				DB5B4EB41BCF0344000CCA2E /* Info.plist */,
+			);
+			path = ramonPediuUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB5B4E8E1BCF0344000CCA2E /* ramonPediu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB5B4EB71BCF0344000CCA2E /* Build configuration list for PBXNativeTarget "ramonPediu" */;
+			buildPhases = (
+				DB5B4E8B1BCF0344000CCA2E /* Sources */,
+				DB5B4E8C1BCF0344000CCA2E /* Frameworks */,
+				DB5B4E8D1BCF0344000CCA2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ramonPediu;
+			productName = ramonPediu;
+			productReference = DB5B4E8F1BCF0344000CCA2E /* ramonPediu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB5B4EA21BCF0344000CCA2E /* ramonPediuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB5B4EBA1BCF0344000CCA2E /* Build configuration list for PBXNativeTarget "ramonPediuTests" */;
+			buildPhases = (
+				DB5B4E9F1BCF0344000CCA2E /* Sources */,
+				DB5B4EA01BCF0344000CCA2E /* Frameworks */,
+				DB5B4EA11BCF0344000CCA2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB5B4EA51BCF0344000CCA2E /* PBXTargetDependency */,
+			);
+			name = ramonPediuTests;
+			productName = ramonPediuTests;
+			productReference = DB5B4EA31BCF0344000CCA2E /* ramonPediuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB5B4EAD1BCF0344000CCA2E /* ramonPediuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB5B4EBD1BCF0344000CCA2E /* Build configuration list for PBXNativeTarget "ramonPediuUITests" */;
+			buildPhases = (
+				DB5B4EAA1BCF0344000CCA2E /* Sources */,
+				DB5B4EAB1BCF0344000CCA2E /* Frameworks */,
+				DB5B4EAC1BCF0344000CCA2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB5B4EB01BCF0344000CCA2E /* PBXTargetDependency */,
+			);
+			name = ramonPediuUITests;
+			productName = ramonPediuUITests;
+			productReference = DB5B4EAE1BCF0344000CCA2E /* ramonPediuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB5B4E871BCF0344000CCA2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Humberto Vieira de Castro";
+				TargetAttributes = {
+					DB5B4E8E1BCF0344000CCA2E = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					DB5B4EA21BCF0344000CCA2E = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = DB5B4E8E1BCF0344000CCA2E;
+					};
+					DB5B4EAD1BCF0344000CCA2E = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = DB5B4E8E1BCF0344000CCA2E;
+					};
+				};
+			};
+			buildConfigurationList = DB5B4E8A1BCF0344000CCA2E /* Build configuration list for PBXProject "ramonPediu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB5B4E861BCF0344000CCA2E;
+			productRefGroup = DB5B4E901BCF0344000CCA2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB5B4E8E1BCF0344000CCA2E /* ramonPediu */,
+				DB5B4EA21BCF0344000CCA2E /* ramonPediuTests */,
+				DB5B4EAD1BCF0344000CCA2E /* ramonPediuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB5B4E8D1BCF0344000CCA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB5B4E9D1BCF0344000CCA2E /* LaunchScreen.storyboard in Resources */,
+				DB5B4E9A1BCF0344000CCA2E /* Assets.xcassets in Resources */,
+				DB5B4E981BCF0344000CCA2E /* Main.storyboard in Resources */,
+				DBE7B9D81BCFBC740081621D /* MainChat.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5B4EA11BCF0344000CCA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5B4EAC1BCF0344000CCA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB5B4E8B1BCF0344000CCA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB5B4E951BCF0344000CCA2E /* ViewController.swift in Sources */,
+				DB5B4E931BCF0344000CCA2E /* AppDelegate.swift in Sources */,
+				DBE7B9DA1BCFBCCE0081621D /* IdentificacaoViewController.swift in Sources */,
+				DBE7B9DC1BCFBD6B0081621D /* PassingVariable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5B4E9F1BCF0344000CCA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB5B4EA81BCF0344000CCA2E /* ramonPediuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5B4EAA1BCF0344000CCA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB5B4EB31BCF0344000CCA2E /* ramonPediuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB5B4EA51BCF0344000CCA2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB5B4E8E1BCF0344000CCA2E /* ramonPediu */;
+			targetProxy = DB5B4EA41BCF0344000CCA2E /* PBXContainerItemProxy */;
+		};
+		DB5B4EB01BCF0344000CCA2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB5B4E8E1BCF0344000CCA2E /* ramonPediu */;
+			targetProxy = DB5B4EAF1BCF0344000CCA2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB5B4E961BCF0344000CCA2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB5B4E971BCF0344000CCA2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB5B4E9B1BCF0344000CCA2E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB5B4E9C1BCF0344000CCA2E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB5B4EB51BCF0344000CCA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB5B4EB61BCF0344000CCA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB5B4EB81BCF0344000CCA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ramonPediu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Xlinker",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.betovieira.ramonPediu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ramonPediu/ramonPediu-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB5B4EB91BCF0344000CCA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ramonPediu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Xlinker",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.betovieira.ramonPediu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ramonPediu/ramonPediu-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		DB5B4EBB1BCF0344000CCA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ramonPediuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.betovieira.ramonPediuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ramonPediu.app/ramonPediu";
+			};
+			name = Debug;
+		};
+		DB5B4EBC1BCF0344000CCA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ramonPediuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.betovieira.ramonPediuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ramonPediu.app/ramonPediu";
+			};
+			name = Release;
+		};
+		DB5B4EBE1BCF0344000CCA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ramonPediuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.betovieira.ramonPediuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ramonPediu;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DB5B4EBF1BCF0344000CCA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ramonPediuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.betovieira.ramonPediuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ramonPediu;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB5B4E8A1BCF0344000CCA2E /* Build configuration list for PBXProject "ramonPediu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB5B4EB51BCF0344000CCA2E /* Debug */,
+				DB5B4EB61BCF0344000CCA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB5B4EB71BCF0344000CCA2E /* Build configuration list for PBXNativeTarget "ramonPediu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB5B4EB81BCF0344000CCA2E /* Debug */,
+				DB5B4EB91BCF0344000CCA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB5B4EBA1BCF0344000CCA2E /* Build configuration list for PBXNativeTarget "ramonPediuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB5B4EBB1BCF0344000CCA2E /* Debug */,
+				DB5B4EBC1BCF0344000CCA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB5B4EBD1BCF0344000CCA2E /* Build configuration list for PBXNativeTarget "ramonPediuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB5B4EBE1BCF0344000CCA2E /* Debug */,
+				DB5B4EBF1BCF0344000CCA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB5B4E871BCF0344000CCA2E /* Project object */;
+}
