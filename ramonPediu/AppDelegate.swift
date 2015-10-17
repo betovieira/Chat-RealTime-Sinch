@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, SINClientDelegate {
@@ -17,7 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINClientDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        Parse.enableLocalDatastore()
         
+        // Initialize Parse.
+        Parse.setApplicationId("dxBvflNWbE6Yc5VdlsyJehBlVu94DsUZuHGfVBlg",
+            clientKey: "lWLAjimNNLIEwkN8u5r86MvDCX5Aasma2jDHIRmC")
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         return true
     }

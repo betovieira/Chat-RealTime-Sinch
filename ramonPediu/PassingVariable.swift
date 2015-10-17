@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Parse
+
 class Singleton {
     var name : String!
     var receptor : String!

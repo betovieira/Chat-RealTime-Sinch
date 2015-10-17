@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 class IdentificacaoViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet var txtNome: UITextField!
-    @IBOutlet var txtReceptor: UITextField!
+    @IBOutlet var txtUsername: UITextField!
+    @IBOutlet var txtPassword: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        txtNome.delegate = self
+        txtUsername.delegate = self
+        txtPassword.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -26,32 +28,45 @@ class IdentificacaoViewController: UIViewController, UITextFieldDelegate {
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.txtNome.resignFirstResponder()
+        self.txtPassword.resignFirstResponder()
+        self.txtUsername.resignFirstResponder()
     }
     
     
     func textFieldShouldReturn(textField: UITextField) -> Bool{
-        self.txtNome.resignFirstResponder()
+        self.txtPassword.resignFirstResponder()
+        self.txtUsername.resignFirstResponder()
         return true;
     }
     
     
     @IBAction func clickEntrar(sender: AnyObject) {
-        if (txtNome.text == nil || txtNome.text == "") {
-            let alertController = UIAlertController(title: "Digite um nome carai!", message: "Não foi colocado um nome", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
+        if (txtUsername.text == nil || txtUsername.text == "") ||
+        (txtPassword.text == nil) || (txtPassword.text == "")
+        {
+            self.alertShowView("Digite todos os dados corretamente", texto: "Texto cool")
             
         } else {
-            Singleton.sharedInstance.name = self.txtNome.text
-            Singleton.sharedInstance.receptor = self.txtReceptor.text
+            //Singleton.sharedInstance.name = self.txtNome.text
+            //Singleton.sharedInstance.receptor = self.txtReceptor.text
             
-            let delegateApp = UIApplication.sharedApplication().delegate as! AppDelegate
-            delegateApp.initChat(Singleton.sharedInstance.name)
+            if logarUsuario(self.txtUsername.text!, senha: self.txtPassword.text!) {
+                let delegateApp = UIApplication.sharedApplication().delegate as! AppDelegate
+                delegateApp.initChat(txtUsername.text!)
+                
+                print("DAORA1 - \(delegateApp.client?.userId)")
+                performSegueWithIdentifier("segueProfissionais", sender: sender)
+                //alertShowView("Logado com sucesso", texto: "Foi")
+
+                //alertSucess("Logado com sucesso", description: "Logado")
+
+            } else {
+                //alertError("Login não existente", description: "")
+                alertShowView("Erro Login não existente", texto: "Erro")
+            }
             
-            performSegueWithIdentifier("segueChat", sender: sender)
+            
+            
             
 //            let vc:AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("ChatViewController")
 //            self.presentViewController(vc as! UIViewController , animated: true, completion: nil)
@@ -60,6 +75,25 @@ class IdentificacaoViewController: UIViewController, UITextFieldDelegate {
         
         
     }
+    
+    func alertShowView(titulo: String, texto: String) {
+        let alertController = UIAlertController(title: titulo, message: texto, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    /* SYNC - Logar usuário normal */
+    func logarUsuario(usuario: String, senha: String) -> Bool {
+        do {
+            _ = try PFUser.logInWithUsername(usuario, password: senha)
+            return true
+        } catch {
+            return false
+        }
+        
+    }
+
 
     @IBOutlet var btnEntrar: UIButton!
     /*

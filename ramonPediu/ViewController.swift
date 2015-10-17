@@ -7,74 +7,89 @@
 //
 
 import UIKit
-//import Parse
+import Parse
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, SINMessageClientDelegate {
     
-    @IBOutlet var messageTableView: UITableView!
+    @IBOutlet var tableViewMensagens: UITableView!
     
     @IBOutlet var viewSend: UIView!
     @IBOutlet var messagesTextField: UITextField!
     
     @IBOutlet var btnSend: UIButton!
-    var messagesArray = [String]()
+    var arrayMensagens = [PFObject]()
     var messageClient: SINMessageClient?
-    
+    var objectMensagem = PFObject(className: "Mensagem")
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tableViewTapped")
         
         self.messagesTextField.addGestureRecognizer(tapGesture)
         
         // Do any additional setup after loading the view, typically from a nib.
-        self.messageTableView.dataSource = self
-        self.messageTableView.delegate = self
+        self.tableViewMensagens.dataSource = self
+        self.tableViewMensagens.delegate = self
         
         self.messagesTextField.delegate = self
         
+        //Carrega as mensagens e desce a tableview
+        self.carregaMensagens()
         
-        self.retrieveMessages()
-        
-        _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("retrieveMessages"), userInfo: nil, repeats: true)
-        
+        /* Delegate */
         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-//        appdelegate.client = Sinch.clientWithApplicationKey("9817a69c-8417-4f05-85b4-645eb8b7e2b6", applicationSecret: "KGfkPu4ckk+rdgcRGdXVCQ==", environmentHost: "sandbox.sinch.com", userId: Singleton.sharedInstance.name)
-//        
-//        appdelegate.client?.setSupportMessaging(true)
-//        appdelegate.client?.setSupportCalling(false)
-//        appdelegate.client?.setSupportActiveConnectionInBackground(true)
 
         messageClient = appdelegate.client?.messageClient()
         messageClient?.delegate = self
-        print("hey")
         
         print("\(Singleton.sharedInstance.name) - \(Singleton.sharedInstance.receptor)")
         
     }
     
+    /* Ainda não sei pra que serve */
     func message(message: SINMessage!, shouldSendPushNotifications pushPairs: [AnyObject]!) {
         
     }
     
+    /* Quando recebe uma mensagem */
     func messageClient(messageClient: SINMessageClient!, didReceiveIncomingMessage message: SINMessage!) {
+        
+        /* Se tiver rolando o app em background exibe um push notification */
         if UIApplication.sharedApplication().applicationState == UIApplicationState.Background {
             let notification = UILocalNotification()
+            
             notification.alertBody = "Mensagem do \(message.recipientIds[0])"
             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
             print("hey1")
             
         }else{
-            messagesArray.append(message.text)
-            self.messageTableView.reloadData()
+            print(message.senderId)
+            
+            /* Coloca no banco local as mensagens recebidas */
+            objectMensagem = PFObject(className: message.senderId)// Colocaro receptor da mensagem
+            objectMensagem.setValue(message.senderId, forKey: "rementente")
+            objectMensagem.setValue(PFUser.currentUser()?.username, forKey: "destinatario")
+            objectMensagem.setValue(message.text, forKey: "texto")
+            objectMensagem.setValue(true, forKey: "enviada")
+            objectMensagem.setValue(false, forKey: "recebida")
+            objectMensagem.pinInBackgroundWithBlock({(success, error) -> Void in
+                if error == nil {
+                    print("TA ENTRANDO NESSA PORRA")
+                    self.arrayMensagens.append(self.objectMensagem)
+                    self.carregaMensagens()
+                }
+                
+            })
+            
             print("hey2")
             
         }
 
     }
-        func messageDelivered(info: SINMessageDeliveryInfo!) {
+    func messageDelivered(info: SINMessageDeliveryInfo!) {
         print("Entregue com sucesso")
             
             
@@ -88,19 +103,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func messageSent(message: SINMessage!, recipientId: String!) {
-        messagesArray.append("\(message.text)")
-        self.messageTableView.reloadData()
         print("Enviada com sucesso")
+        let receptor = Singleton.sharedInstance.receptor
+        
+        objectMensagem = PFObject(className: receptor)
+        objectMensagem.setValue(PFUser.currentUser()?.username, forKey: "remetente")
+        objectMensagem.setValue(Singleton.sharedInstance.receptor, forKey: "destinatario")
+        objectMensagem.setValue(message.text, forKey:"texto")
+        objectMensagem.setValue(true, forKey: "enviada")
+        objectMensagem.setValue(false, forKey: "recebida")
+        objectMensagem.pinInBackgroundWithBlock({(success, error) -> Void in
+            if error == nil {
+                print("TA ENTRANDO NESSA PORRA")
+                self.arrayMensagens.append(self.objectMensagem)
+                self.carregaMensagens()
+            }
+        
+        })
         
         
-        /*
-            qual a ideia, toda vez que chegar ou enviar alguma mensagem colocar ela em um banco local e salvar no celular, assim, o serviço serviria apenas para se comunicar e fazer com que a mensagem chegue em tempo real
         
-        
-        
-        */
-
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -121,11 +145,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Cria a celula
-        let cell = self.messageTableView.dequeueReusableCellWithIdentifier("MessageCell") as UITableViewCell?
+        let cell = self.tableViewMensagens.dequeueReusableCellWithIdentifier("MessageCell") as UITableViewCell?
         
+        let messageObject = self.arrayMensagens[indexPath.row] 
         
         // Altera a célula
-        cell!.textLabel?.text = self.messagesArray[indexPath.row]
+        cell!.textLabel?.text = messageObject["texto"] as? String
         
         //Retorna a celula
         return cell!
@@ -133,21 +158,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messagesArray.count
+        return arrayMensagens.count
     }
     
     @IBAction func clickEnviar(sender: AnyObject) {
         
         self.view.layoutIfNeeded()
         
-        //Trava os campos para que não consiga enviar
-        self.messagesTextField.enabled = false
-        //self.btnSend.enabled = false
-        
         let message = SINOutgoingMessage(recipient: Singleton.sharedInstance.receptor, text: self.messagesTextField.text!)
         
+        
+        
         messageClient?.sendMessage(message)
-
         
         print("manda pro server")
         UIView.animateWithDuration(0.5, animations: {
@@ -157,35 +179,50 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    func retrieveMessages()
+    func carregaMensagens()
     {
-        /*
-        let query:PFQuery = PFQuery(className: "Message")
+        let usuario = PFUser.currentUser()?.username as String!
+        let receptor = Singleton.sharedInstance.receptor
+
         
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            self.messagesArray = [String]()
-            
-            for messageObject in objects! {
-                let messageString: String = messageObject["Text"] as! String
+        let predicadoRemetente = NSPredicate(format: "remetente = %@ OR destinatario = %@", argumentArray: [usuario, usuario])
+        
+        let queryTotal = PFQuery(className: receptor, predicate: predicadoRemetente)
+        queryTotal.fromLocalDatastore()
+        
+        /* Pega todos os dados do banco local e preenche de acordo com a pessoa estou conversando */
+/*        let queryEnviados = PFQuery(className: receptor)
+        queryEnviados.fromLocalDatastore()
+//        queryEnviados.whereKey("destinatario", equalTo: Singleton.sharedInstance.receptor)
+        queryEnviados.whereKey("remetente", equalTo: (PFUser.currentUser()?.username)!)
+
+        let queryRecebidos = PFQuery(className: receptor)
+        queryRecebidos.fromLocalDatastore()
+        queryRecebidos.whereKey("destinatario", equalTo: (PFUser.currentUser()?.username)!)
+        //queryRecebidos.whereKey("remetente", equalTo: Singleton.sharedInstance.receptor)
+        
+
+        let queryFinal = PFQuery.orQueryWithSubqueries([queryEnviados, queryRecebidos])
+*/
+        print("Eita")
+        
+        queryTotal.findObjectsInBackgroundWithBlock({
+            (objects, error) -> Void in
+            if error == nil {
+                print(objects!)
                 
-                if messageString != "" {
-                    self.messagesArray.append(messageString)
+                self.arrayMensagens = objects!
+                self.tableViewMensagens.reloadData()
+                print("Eita1")
+
+                
+                if self.arrayMensagens.count > 12 {
+                    self.tableViewMensagens.setContentOffset(CGPointMake(0, self.tableViewMensagens.contentSize.height - self.tableViewMensagens.frame.size.height), animated: false)
                 }
+                
             }
             
-            dispatch_async(dispatch_get_main_queue() ){
-                //Atualiza a table view
-                self.messageTableView.reloadData()
-                
-                //Coloca para baixo
-                self.messageTableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.messagesArray.count - 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
-            }
-        }
-        
-        //messageTableView.setContentOffset(CGPointZero, animated:true)
-        messageTableView.alwaysBounceVertical = true;
-        */
-        
+        })
     }
     
     

@@ -3,3 +3,5 @@
 //
 
 #import <Sinch/Sinch.h>
+
+#import "TWMessageBarManager.h"
